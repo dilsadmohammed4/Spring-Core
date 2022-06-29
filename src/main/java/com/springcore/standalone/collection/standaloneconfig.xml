@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd
+    ">
+
+	<!-- Standalone List -->
+	<util:list list-class="java.util.LinkedList"
+		id="mybestfriend">
+		<value>Aman</value>
+		<value>Ram</value>
+		<value>Sam</value>
+		<value>Dam</value>
+	</util:list>
+	
+	<!-- Standalone Map -->
+	<util:map map-class="java.util.HashMap" id="mycourse">
+	<entry key="Sring Framework" value="7000" />
+	<entry key="Django Framework" value="4000" />
+	</util:map>
+	
+	<!-- Standalone Properties -->
+	<util:properties id="dbcon">
+	<prop key="driver">com.sql.jdbc.driver</prop>
+	<prop key="user">root</prop>
+	<prop key="password">system</prop>
+	</util:properties>
+	
+	<bean class="com.springcore.standalone.collection.Person"
+		name="person1">
+		<property name="friends" ref="mybestfriend" />
+		<!-- 	<ref bean="mybestfriend" />
+		</property> -->
+		<property name="feestructure" ref="mycourse" />
+		<property name="props" ref="dbcon" />
+	</bean>
+
+</beans>

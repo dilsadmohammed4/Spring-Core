@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    ">
+
+
+	<!-- First -->
+	<bean class="com.springcore.collection.Emp" name="emp1">
+		<property name="name" value="Dilsad Mohammed" />
+		<property name="phones">
+			<list>
+				<value>12345</value>
+				<value>23456</value>
+				<value>34567</value>
+				<null />
+			</list>
+		</property>
+		<property name="address">
+			<set>
+				<value>Puri</value>
+				<value>BBSR</value>
+				<value>Satapa</value>
+			</set>
+		</property>
+		<property name="courses">
+			<map>
+				<entry key="Java" value="2 month" />
+				<entry key="C" value="1 month" />
+				<entry key="C++" value="3 month" />
+			</map>
+		</property>
+		<property name="countryAndLangs">
+			<props>
+				<prop key="India">Hindi</prop>
+				<prop key="USA">English</prop>
+			</props>
+		</property>
+
+	</bean>
+
+</beans>
